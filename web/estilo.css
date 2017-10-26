@@ -1,0 +1,688 @@
+@charset "UTF-8"
+
+/*-------------------------------------------------------------------------MENU-----------------------------------------------------------------------------*/
+body{
+
+}
+
+body{
+    margin: 0;
+
+}
+
+img.logo{
+    position: relative;
+    height: 50px;
+    width: auto;
+    margin: 15px;
+    margin-left: 0px;
+    float: left;
+}
+
+nav.menu{
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    top: 0px;
+    z-index: 3;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+nav.menuFixo{
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #dedede;
+}
+
+nav.menuFixo li a.dark{
+    color: #424242;
+}
+
+nav.menu ul{
+    position: relative;
+    height: 80px;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 0;
+}
+
+nav.menu li{
+    display: inline-block;
+    padding: 35px 11px 25px 11px;
+}
+
+nav.menu li a{
+    color: #fff;
+    text-decoration: none;
+    font-family: "Open Sans";
+    font-size: 14px;
+    line-height: 18px;
+}
+
+nav div.right{
+    display: inline-block;
+    float: right;
+}
+
+nav.menu li.right{
+    float: right;
+    padding: 34px 15px 0px 13px;
+
+}
+
+div.right-bord{
+    float: right;
+    margin-top: 22px;	
+}
+
+div.user{
+    float: right;
+    margin-top: 7px;
+    color: #424242;
+}
+
+p.user{
+    border: 1px solid #424242;
+    border-radius: 5px;
+    margin-right: 40px;
+    margin-left: 11px;
+    margin-top: 2px;
+    padding: 6px 21px;
+    font-weight: 600;
+    line-height: 24px;
+    font-family: sans-serif;
+}
+
+li.li-right-bordB{
+    background-color: #408bc9;
+    border-color: #408bc9;
+}
+
+nav.menu li.li-right-bord{	
+    border: 1px solid #fff;
+    border-radius: 5px;
+    margin-right: 40px;
+    margin-left: 11px;
+    margin-top: 2px;
+    padding: 6px 21px;
+    font-weight: 600;
+    line-height: 24px;
+    font-family: sans-serif;
+}
+
+div.desktop{
+    position: relative;
+    height: 80px;
+    width: 1200px;
+    max-width: 100%;
+    padding: 0;
+    margin: 0 auto;
+}
+
+div.iconpro{
+    float: right;
+    margin-left: 5px;
+}
+
+div.iconmobile{
+    display: none;
+    float: right;
+    height: 65px;
+    width: 70px;
+}
+
+div.menuPost{
+    display: inline-block;
+    margin-left: 25px;
+}
+
+div.menuPost a.dark{
+    color: #424242;
+    text-decoration: none;
+    font-family: "Open Sans";
+    font-size: 14px;
+    line-height: 18px;
+    padding: 0px 15px 0px 13px;
+}
+
+/*-------------------------HOVER DO MENU-------------------------------*/
+nav.menu li.hover-white:hover {
+    background-color: rgba(255,255,255,.3);
+}
+
+nav.menu li.hover-white_x:hover {
+    background-color: rgba(255,255,255,.3);
+}
+
+nav.menu li.li-right-bord:hover {
+    background-color: rgba(255,255,255,.3);
+}
+
+nav.menu li.li-right-bordB:hover {
+    background-color: #3475c0;
+}
+
+nav.menu li.right a:hover {
+    color: #ffa500;
+}
+
+nav.menu li.rOrange a:hover {
+    color: #ffa500;
+}
+
+div.iconmobile:hover{
+    cursor: pointer;
+    background-color: rgba(255,255,255,.3);
+}
+
+p.user:hover{
+    cursor: pointer;
+    background-color: rgba(41, 13, 13, 0.3);
+}
+
+div.menuPost a.dark:hover{
+    color: #ffa500;
+}
+
+input.postar:hover{
+    cursor: pointer;
+    background-color: rgba(41, 13, 13, 0.3);
+}
+
+/*-------------------------HOVER DO MENU-------------------------------*/
+/*--------------------------------------------------------------------------POSTAGENS----------------------------------------------------------------------*/
+body textarea.dadosI{
+    position: relative;
+    font-family: "Open Sans";
+    width: 90%;
+    max-width: 100%;
+    height: 127px;
+    padding: 4px 10px 4px 10px;
+    border: 1px solid #a7a7a7;
+    border-radius: 10px;
+    max-width: 100%;
+    resize: none;
+}
+
+input.titulo{
+    position: relative;
+    font-family: "Open Sans";
+    border: 1px solid #a7a7a7;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 100%;
+    padding: 4px 10px 4px 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+input.postar{
+    margin-top: 40px;
+    width: 95%;
+    max-width: 100%;
+    border: 1px solid #424242;
+    border-radius: 5px;
+    padding: 6px 21px;
+    font-weight: 600;
+    line-height: 24px;
+    font-family: "Open Sans";
+}
+
+input.files{
+    position: relative;
+    top: 20px;
+    width: 90%;
+    max-width: 100%;
+    border: 1px solid #a7a7a7;
+    border-radius: 5px;
+    padding: 6px 10px 6px 10px;
+    font-weight: 600;
+    line-height: 24px;
+    font-family: "Open Sans";
+    color: #a7a7a7;
+}
+
+/*--------------------------------------------------------------------------POSTAGENS----------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------MENU-----------------------------------------------------------------------------*/
+
+
+/*-----------------------------IMAGENS---------------------------------*/
+div.back-photo{
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    height: 665px;
+    overflow:hidden;
+}
+
+img.img{
+    position: absolute;
+    left: calc(50% - 800px);
+    top: -200px;
+    height: 962px;
+    width: 1710px;
+}
+
+div.gradient{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 665px;
+    max-width: 100%;
+    background: linear-gradient(to bottom left,#77c4e3,#8176b5);
+    opacity: 0.5;
+}
+
+div.mapa{
+    margin-left: 70px;
+    max-width: 100%;
+    background-size: cover;
+}
+
+div.mapa img{
+    max-width: 100%;
+    height: auto;
+}
+/*-----------------------------IMAGENS---------------------------------*/
+
+
+/*----------------------------------------------------------------------CENTRO--------------------------------------------------------------------------*/
+div.center{
+    position: absolute;
+    width: 597px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 322px;
+    text-align: center;
+    text-shadow: 0 1px 5px rgba(0,0,0,.6);
+    line-height: 1.3;
+    color: #fff;
+    font-family: "Roboto Slab";
+}
+
+h1.center{
+    font-weight: 300;
+    max-width: 100%;
+}
+
+.subcenter{
+    position: relative;
+    font-size: 14px;
+    font-family: "Open Sans";
+    top: -15px;
+}
+
+div.center a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+
+section.scroll{
+    position: relative;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+}
+
+section div.scroll-center{
+    font-family: "Roboto Slab";
+    text-align: center;
+}
+
+h1.sp-center{
+    font-family: "Roboto Slab";
+    margin-top: 70px;
+    font-size: 36px;
+    font-weight: 300;
+    text-align: center;
+    color: #424242;
+}
+
+h2.sp-center{
+    font-family: "Open Sans";
+    font-size: 21px;
+    font-weight: 300;
+    color: #424242;
+}
+
+h3.sp-center{
+    font-family: "Open Sans";
+    font-size: 17px;
+    font-weight: 300;
+    color: #424242;
+}
+
+div.pessoal{
+    position: relative;
+    top: 60px;
+    background-color: #f2f2f2;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    padding-top: 1px;
+    padding-bottom: 70px;
+}
+
+div.sub-pessoal{
+    text-align: center;
+    margin: 0 auto;
+    width: 772px;
+    max-width: 100%;
+}
+
+div.postagens{
+    margin: 0 auto;
+    position: relative;
+    width: 960px;
+    height: auto;
+    max-width: 100%;
+    text-align: center;
+}
+
+.post{
+    position: relative;
+    width: 80%;
+    height: auto;
+    max-width: 100%;
+    font-family: "Open Sans";
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0,0,0,.25);
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    background: linear-gradient(to bottom left,#76c4e2,#8176b5);
+}
+
+#post1{
+    background: linear-gradient(to bottom left,#ba77b1,#8176b5);
+}
+
+#post2{
+    background: linear-gradient(to bottom left,#85cba8,#76c4e2);
+}
+
+#post3{
+    background: linear-gradient(to bottom left,#76c4e2,#8176b5);
+}
+
+#post4{
+    background: linear-gradient(to bottom left,#ffdb6f,#f69259);
+}
+
+/*----------------------------------------------------------------------CENTRO--------------------------------------------------------------------------*/
+
+/*----------------------------------------INSCREVA-SE/LOGIN-----------------------------------------*/
+img.logo-dark{
+    height: 42px;
+    width: 133px;
+    margin: 4.95px 0 0;
+}
+
+body div.top{
+    background-color: white;
+    height: 59px;
+    width: 100%;
+    background-color: #f9f9f9;
+    border-top: solid #f16975;
+    border-bottom: 1px solid #dedede;
+}
+
+body input.dados{
+    width: 323px;
+    height: 34px;
+    margin-bottom: 25px;
+    margin-left: 27px;  
+    padding-left: 10px;
+    border: 1px solid #a7a7a7;
+    border-radius: 2px;
+    max-width: 80%;
+}
+
+body input.dadosI{
+    top: 70px;
+    width: 323px;
+    height: 34px;
+    margin-bottom: 10px;
+    margin-left: 27px;
+    padding-left: 10px;
+    border: 1px solid #a7a7a7;
+    border-radius: 2px;
+    max-width: 80%;
+}
+
+body div.tela{
+    position: relative;
+    background-color: rgba(213, 213, 213, 0.6);
+    width: 100%;
+    max-width: 100%;
+    height: 443px;
+    padding-top: 25px;
+}
+
+body div.container{
+    padding: 5px;
+    background-color: #fff;
+    width: 390px;
+    height: 404px;
+    border: 1px solid #dedede;
+    margin-left: 475px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2.crie{
+    font-family: "Open Sans";
+    margin-bottom: 40px;
+    margin-top: 0;
+    padding-top: 20px;
+    text-align: center;
+}
+
+h3.crie{
+    font-family: "Open Sans";
+    text-align: center;
+}
+
+div.crie{
+    font-family: "Open Sans";
+    text-align: center;
+}
+
+a.signUp{
+    font-family:"Open Sans";
+    margin-left: 28px;
+}
+
+.important{
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: 150px;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+}
+
+div.control{
+    font-family: "Open Sans";
+    margin-right: 20px;
+    font-size: 14px;
+}
+
+div.check{
+    display: inline-block;
+    margin-left: 23px;
+}
+
+input.check{
+    bottom: 30px;
+    position: relative;
+}
+
+span.text{
+    display: inline-block;
+    width: 306px;
+    max-width: 80%;
+}
+
+input.submit{
+    margin-top: 20px;
+    height: 46px;
+    margin-left: 28px;
+    width: 335px;
+    border-radius: 2px;
+    background-color: #88b928;
+    font-size: 15px;
+    border: 1px solid #87b331;
+    font-family: "Open Sans";
+    color: white;
+    max-width: 83%;   
+}
+
+.foot{
+    width: 100%;
+    height: 200px;
+    max-width: 100%;
+}
+
+/*----------------------------------------INSCREVA-SE/LOGIN-----------------------------------------*/
+
+
+/*-------------------------------------------------------------------------MEDIAS QUERIS---------------------------------------------------------------------*/
+@media only screen and (min-width: 401px){
+    div.desktop{
+        display: static;
+    }
+
+    div.center{
+        font-size: 20px;
+    }
+
+    input.check {
+        bottom: 15px;
+    }
+
+}
+
+@media only screen and (max-width: 999px){
+    li a{
+        display: none;
+    }
+
+    ul{
+        display: none;
+    }
+
+    div.user{
+        display: none;
+    }
+
+    img.logo{
+        position: absolute;
+        margin: 15px 17px 0px 17px;
+    }
+
+    div.iconmobile{
+        display: inline-block;
+        position: relative;
+        top: -27px;
+        margin-right: 24px;
+        margin-top: 20px;
+        padding-top: 20px;
+    }
+
+    div.center{
+        top: 300px;
+        width: 350px;
+        font-size: 16px;
+        font-weight: 300;
+    }
+
+    input.check {
+        bottom: 15px;
+    }
+
+    div.gradient {
+        height: 540px;
+    }
+
+    div.back-photo{
+        height:540px;
+    }
+}
+
+@media only screen and (max-width: 749px){
+
+    div.menuPost{
+        display: none;
+    }
+
+    div.center{
+        position: absolute;	
+        width: 300px;
+        font-size: 12px;
+        top: 364px;
+    }
+
+    div.iconmobile{
+        padding-top: 20px;
+    }
+
+    a.subcenter{
+        top: 0;
+    }
+
+    input.check {
+        bottom: 15px;
+    }
+}
+
+@media only screen and (max-width: 400px){
+
+    div.center{
+        position: absolute;
+        top: 380px;
+        font-size: 12px;
+        width: 300px;
+        max-width: 300px;
+    }
+
+    div.iconmobile{
+        padding-top: 20px;
+    }
+
+}
+
+@media only screen and (max-width: 1200px){
+
+    nav.menu li.hover-white_x{
+        display: none;
+    }
+
+    input.check {
+        bottom: 15px;
+    }
+}
+
+@media only screen and (max-width: 1880px){
+
+    nav.menu li.right-bord{ 
+        margin-right: 50px;
+    }
+
+    img.logo{
+        margin-left: 10px;
+    }
+
+}
+/*-------------------------------------------------------------------------MEDIAS QUERIS---------------------------------------------------------------------*/
