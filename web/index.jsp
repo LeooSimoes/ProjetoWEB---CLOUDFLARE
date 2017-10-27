@@ -153,8 +153,9 @@
                             <%postagens p = post.get(i);%>
                             <h2><%= p.getTitulo()%></h2>
                             <p><%= p.getTexto()%></p>
+                            <%String ext = p.getFile();%>
                             <% if(!p.getFile().equals("")){%>
-                            <img src="<%=p.getFile()%>" width="300px" height="300px">
+                            <img src="<%=request.getContextPath()%>/<%=p.getFile()%>" width="300px" height="300px">
                             <%}%>
                             </div>
                             <%}%>

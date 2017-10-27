@@ -205,28 +205,32 @@ out.println((request.getSession()).getAttribute("usuario"));
                     for (int i = 0; i < post.size(); i++) {
       out.write("\n");
       out.write("                        <div class=\"post\">\n");
-      out.write("                        ");
+      out.write("                            ");
 postagens p = post.get(i);
       out.write("\n");
-      out.write("                        <h2>");
+      out.write("                            <h2>");
       out.print( p.getTitulo());
       out.write("</h2>\n");
-      out.write("                        <p>");
+      out.write("                            <p>");
       out.print( p.getTexto());
       out.write("</p>\n");
-      out.write("                        ");
+      out.write("                            ");
+String ext = p.getFile();
+      out.write("\n");
+      out.write("                            ");
  if(!p.getFile().equals("")){
       out.write("\n");
-      out.write("                        <img src=\"");
+      out.write("                            <img src=\"");
       out.print(p.getFile());
       out.write("\" width=\"300px\" height=\"300px\">\n");
-      out.write("                        ");
+      out.write("                            ");
 }
       out.write("\n");
-      out.write("                        ");
+      out.write("                            </div>\n");
+      out.write("                            ");
 }
       out.write("\n");
-      out.write("                </div>\n");
+      out.write("                        \n");
       out.write("            </div>\n");
       out.write("        </div>\n");
       out.write("\n");
