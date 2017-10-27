@@ -1,3 +1,4 @@
+<%@page import="javax.servlet.annotation.MultipartConfig"%>
 <%@page import="banco.Consultas"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -27,7 +28,7 @@
             </div>
             <div class="tela">
                 <div class="container" style="width: 625px; height: 375px; margin-top: 13px;text-align: center;">
-                    <form action="./form" method="post">
+                    <form action="./form" method="post" enctype="multipart/form-data">
                         <%
                             Consultas c = new Consultas();
                             String user = String.valueOf((request.getSession()).getAttribute("usuario"));

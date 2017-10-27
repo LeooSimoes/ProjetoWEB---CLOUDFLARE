@@ -167,14 +167,13 @@ public class Consultas {
         ConnectBD db = new ConnectBD();
         Connection conn = db.getConnection();
         try {
-            String sql = "select * from post where id = ?";
+            String sql = "select * from post where cliente_id = ?";
 
-            postagens p;
             pt = conn.prepareStatement(sql);
             pt.setInt(1, id);
-            ResultSet resultSet = pt.executeQuery();
+            ResultSet resultSet = pt.executeQuery();          
             while (resultSet.next()) {
-                p = new postagens();
+                postagens p = new postagens();
                 p.setId(resultSet.getInt("id"));
                 p.setCliente_id(resultSet.getInt("cliente_id"));
                 p.setTitulo(resultSet.getString("titulo"));

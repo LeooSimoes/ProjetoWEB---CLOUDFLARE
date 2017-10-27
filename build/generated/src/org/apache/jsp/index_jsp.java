@@ -3,6 +3,7 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import javax.servlet.annotation.MultipartConfig;
 import java.util.ArrayList;
 import ClassServlets.postagens;
 import banco.Consultas;
@@ -44,6 +45,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+      out.write("\n");
       out.write("\n");
       out.write("\n");
       out.write("\n");
@@ -206,18 +208,21 @@ out.println((request.getSession()).getAttribute("usuario"));
       out.write("                        ");
 postagens p = post.get(i);
       out.write("\n");
-      out.write("                        <p>");
+      out.write("                        <h2>");
       out.print( p.getTitulo());
-      out.write("</p>\n");
+      out.write("</h2>\n");
       out.write("                        <p>");
       out.print( p.getTexto());
       out.write("</p>\n");
+      out.write("                        ");
+ if(!p.getFile().equals("")){
+      out.write("\n");
       out.write("                        <img src=\"");
-      out.print( request.getContextPath());
-      out.write('/');
       out.print(p.getFile());
-      out.write("\" width=\"80%\" height=\"70%\">\n");
-      out.write("                        \n");
+      out.write("\" width=\"300px\" height=\"300px\">\n");
+      out.write("                        ");
+}
+      out.write("\n");
       out.write("                        ");
 }
       out.write("\n");

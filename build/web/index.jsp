@@ -1,3 +1,4 @@
+<%@page import="javax.servlet.annotation.MultipartConfig"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="ClassServlets.postagens"%>
 <%@page import="banco.Consultas"%>
@@ -149,13 +150,15 @@
                     ArrayList<postagens> post = c.post(id);
                     for (int i = 0; i < post.size(); i++) {%>
                         <div class="post">
-                        <%postagens p = post.get(i);%>
-                        <p><%= p.getTitulo()%></p>
-                        <p><%= p.getTexto()%></p>
-                        <img src="<%= request.getContextPath()%>/<%=p.getFile()%>" width="80%" height="70%">
+                            <%postagens p = post.get(i);%>
+                            <h2><%= p.getTitulo()%></h2>
+                            <p><%= p.getTexto()%></p>
+                            <% if(!p.getFile().equals("")){%>
+                            <img src="<%=p.getFile()%>" width="300px" height="300px">
+                            <%}%>
+                            </div>
+                            <%}%>
                         
-                        <%}%>
-                </div>
             </div>
         </div>
 
