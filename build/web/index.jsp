@@ -149,17 +149,26 @@
                     int id = c.idUser(user);
                     ArrayList<postagens> post = c.post(id);
                     for (int i = 0; i < post.size(); i++) {%>
-                        <div class="post">
-                            <%postagens p = post.get(i);%>
-                            <h2><%= p.getTitulo()%></h2>
-                            <p><%= p.getTexto()%></p>
-                            <%String ext = p.getFile();%>
-                            <% if(!p.getFile().equals("")){%>
-                            <img src="<%=request.getContextPath()%>/<%=p.getFile()%>" width="300px" height="300px">
-                            <%}%>
-                            </div>
-                            <%}%>
-                        
+                <div class="post">
+                    <%postagens p = post.get(i);%>
+                    <h2><%= p.getTitulo()%></h2>
+                    <p><%= p.getTexto()%></p>
+                    <%String ext = p.getFile().substring(p.getFile().lastIndexOf("."));%>
+                    <% if (ext.equals(".jpg") || ext.equals(".png")) {%>
+                    <img src="<%=request.getContextPath()%>/<%=p.getFile()%>" width="300px" height="300px">
+                    <%} else if(ext.equals(".mp4") || ext.equals(".avi") || ext.equals(".mov") || ext.equals(".wmv") || ext.equals(".webm")){%>
+                     <video width="320" height="240" controls>
+                        <source src="<%=request.getContextPath()%>/<%=p.getFile()%>" type="video/mp4">
+                        <source src="<%=request.getContextPath()%>/<%=p.getFile()%>" type="video/avi">
+                        <source src="<%=request.getContextPath()%>/<%=p.getFile()%>" type="video/mov">
+                        <source src="<%=request.getContextPath()%>/<%=p.getFile()%>" type="video/avi">
+                        <source src="<%=request.getContextPath()%>/<%=p.getFile()%>" type="video/wmv">
+                        <source src="<%=request.getContextPath()%>/<%=p.getFile()%>" type="video/webm">
+                    </video> 
+                    <%}%>
+                </div>
+                <%}%>
+
             </div>
         </div>
 

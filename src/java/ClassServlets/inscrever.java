@@ -61,6 +61,7 @@ public class inscrever extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse res)
             throws ServletException, IOException {
         Consultas c = new Consultas();
+        req.setCharacterEncoding("UTF-8");
         if (c.inserir(req.getParameter("email"), req.getParameter("senha"), req.getParameter("endereco"))) {
             res.sendRedirect("./login");
         } else {

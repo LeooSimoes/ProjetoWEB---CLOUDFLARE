@@ -60,6 +60,7 @@ public class login extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse res)
             throws ServletException, IOException {
         Consultas c = new Consultas();
+        req.setCharacterEncoding("UTF-8");
         if (c.logar(req.getParameter("email"), req.getParameter("senha"))) {
             req.getSession().setAttribute("logado", new Boolean(true));
             req.getSession().setAttribute("usuario", req.getParameter("email"));

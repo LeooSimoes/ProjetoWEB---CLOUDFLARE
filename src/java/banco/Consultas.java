@@ -83,7 +83,7 @@ public class Consultas {
         Connection conn = db.getConnection();
 
         boolean sucesso = false;
-
+        
         String sql = "insert into post (cliente_id, titulo, texto, file) values(?, ?, ?, ?)";
 
         try {

@@ -37,6 +37,7 @@ public class form extends HttpServlet implements java.io.Serializable {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Consultas c = new Consultas();
+        request.setCharacterEncoding("UTF-8");
         Part arquivo = request.getPart("arquivos");
 
         String nomeAntigo = Paths.get(arquivo.getSubmittedFileName()).getFileName().toString();
@@ -58,7 +59,7 @@ public class form extends HttpServlet implements java.io.Serializable {
                 String titulo = request.getParameter("titulo");
                 String texto = request.getParameter("texto");
                 String file = path;
-
+            
                 if (c.inserirPost(id, titulo, texto, file)) {
                     response.sendRedirect("./index.jsp");
                 }
