@@ -20,12 +20,12 @@ import java.util.logging.Logger;
  */
 public class Consultas {
 
-    public static int numberArq = 0;
+    public static int numberArq;
     ConnectBD db = new ConnectBD();
     Connection conn = db.getConnection();
     PreparedStatement pt;
 
-    public boolean userIgual(String user) {
+    public boolean userIgual(String user) throws SQLException {
 
         boolean sucesso = false;
 
@@ -44,11 +44,13 @@ public class Consultas {
             Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+        conn.close();
         db.closeConnection();
+        
         return sucesso;
     }
 
-    public boolean inserir(String user, String pswd, String endereco) {
+    public boolean inserir(String user, String pswd, String endereco) throws SQLException {
 
         ConnectBD db = new ConnectBD();
         Connection conn = db.getConnection();
@@ -73,7 +75,9 @@ public class Consultas {
             }
 
         }
+        conn.close();
         db.closeConnection();
+        
         return sucesso;
     }
 
@@ -83,7 +87,7 @@ public class Consultas {
         Connection conn = db.getConnection();
 
         boolean sucesso = false;
-        
+
         String sql = "insert into post (cliente_id, titulo, texto, file) values(?, ?, ?, ?)";
 
         try {
@@ -99,11 +103,13 @@ public class Consultas {
             Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+        conn.close();
         db.closeConnection();
+        
         return sucesso;
     }
 
-    public boolean logar(String user, String pswd) {
+    public boolean logar(String user, String pswd) throws SQLException {
         ConnectBD db = new ConnectBD();
         Connection conn = db.getConnection();
 
@@ -128,17 +134,13 @@ public class Consultas {
             }
         }
 
-        try {
-            conn.close();
+        conn.close();
+        db.closeConnection();
 
-        } catch (SQLException ex) {
-            Logger.getLogger(Consultas.class
-                    .getName()).log(Level.SEVERE, null, ex);
-        }
         return sucesso;
     }
 
-    public int idUser(String user) {
+    public int idUser(String user) throws SQLException {
         ConnectBD db = new ConnectBD();
         Connection conn = db.getConnection();
 
@@ -150,14 +152,16 @@ public class Consultas {
                 pt = conn.prepareStatement(sql);
                 pt.setString(1, user);
                 ResultSet rs = pt.executeQuery();
-                if(rs.next())
+                if (rs.next()) {
                     resp = rs.getInt("id");
+                }
                 pt.close();
 
             } catch (SQLException ex) {
                 Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        conn.close();
         db.closeConnection();
         return resp;
     }
@@ -171,7 +175,7 @@ public class Consultas {
 
             pt = conn.prepareStatement(sql);
             pt.setInt(1, id);
-            ResultSet resultSet = pt.executeQuery();          
+            ResultSet resultSet = pt.executeQuery();
             while (resultSet.next()) {
                 postagens p = new postagens();
                 p.setId(resultSet.getInt("id"));
@@ -183,10 +187,42 @@ public class Consultas {
             }
             pt.close();
         } catch (SQLException ex) {
-                Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         conn.close();
+        db.closeConnection();
+        return posts;
+
+    }
+
+    public ArrayList<postagens> busca(String palavra) throws SQLException {
+        ArrayList<postagens> posts = new ArrayList<postagens>();
+        ConnectBD db = new ConnectBD();
+        Connection conn = db.getConnection();
+        
+        try {
+            String sql = "select * from post where titulo ilike ?";
+
+            pt = conn.prepareStatement(sql);
+            pt.setString(1, "%"+palavra+"%");
+            ResultSet resultSet = pt.executeQuery();
+            while (resultSet.next()) {
+                postagens p = new postagens();
+                p.setId(resultSet.getInt("id"));
+                p.setCliente_id(resultSet.getInt("cliente_id"));
+                p.setTitulo(resultSet.getString("titulo"));
+                p.setTexto(resultSet.getString("texto"));
+                p.setFile(resultSet.getString("file"));
+                posts.add(p);
+            }
+            pt.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        conn.close();
+        db.closeConnection();
         return posts;
 
     }

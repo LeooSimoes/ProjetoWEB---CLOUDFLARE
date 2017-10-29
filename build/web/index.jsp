@@ -143,7 +143,9 @@
 
             <div class="postagens">
                 <h1 class="sp-center" style="margin-top: 45px; text-align: center;"><a href="./postar.jsp" style="text-decoration: none">Deseja postar? Clique aqui</a></h1>
-
+                <form action="./busca.jsp" method="get" enctype="multipart/form-data">
+                    <input class="busca" type="text" name="busca" placeholder="Buscar Posts..." value="">
+                </form>
                 <%  Consultas c = new Consultas();
                     String user = String.valueOf((request.getSession()).getAttribute("usuario"));
                     int id = c.idUser(user);
@@ -155,15 +157,12 @@
                     <p><%= p.getTexto()%></p>
                     <%String ext = p.getFile().substring(p.getFile().lastIndexOf("."));%>
                     <% if (ext.equals(".jpg") || ext.equals(".png")) {%>
-                    <img src="<%=request.getContextPath()%>/<%=p.getFile()%>" width="300px" height="300px">
-                    <%} else if(ext.equals(".mp4") || ext.equals(".avi") || ext.equals(".mov") || ext.equals(".wmv") || ext.equals(".webm")){%>
-                     <video width="320" height="240" controls>
+                    <img src="<%=request.getContextPath()%>/<%=p.getFile()%>" width="60%" height="20%">
+                    <%} else if (ext.equals(".mp4") || (ext.equals(".webm")) || (ext.equals(".ogg"))) {%> 
+                    <video width="60%" height="20%" controls>
                         <source src="<%=request.getContextPath()%>/<%=p.getFile()%>" type="video/mp4">
-                        <source src="<%=request.getContextPath()%>/<%=p.getFile()%>" type="video/avi">
-                        <source src="<%=request.getContextPath()%>/<%=p.getFile()%>" type="video/mov">
-                        <source src="<%=request.getContextPath()%>/<%=p.getFile()%>" type="video/avi">
-                        <source src="<%=request.getContextPath()%>/<%=p.getFile()%>" type="video/wmv">
                         <source src="<%=request.getContextPath()%>/<%=p.getFile()%>" type="video/webm">
+                        <source src="<%=request.getContextPath()%>/<%=p.getFile()%>" type="video/ogg">
                     </video> 
                     <%}%>
                 </div>

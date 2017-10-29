@@ -33,11 +33,11 @@
                             Consultas c = new Consultas();
                             String user = String.valueOf((request.getSession()).getAttribute("usuario"));
                             int id = c.idUser(user);%>
-                             <input type="hidden" name="id" value="<%=id%>"></input>
-                        <div><input class="titulo" type="text" name="titulo" placeholder="Título" value=""></input></div>
+                             <input type="hidden" name="id" value="<%=id%>">
+                        <div><input class="titulo" type="text" name="titulo" placeholder="Título" value=""></div>
                         <div><textarea class="dadosI" name="texto" maxlength="255" placeholder="Escreva Aqui..." value=""></textarea></div>
-                        <div><input class="files" type="file" name="arquivos"></input></div>
-                        <div><input class="postar" type="submit" name="postar" value="Postar"></input></div>
+                        <div><input class="files" type="file" name="arquivos"></div>
+                        <div><input class="postar" type="submit" name="postar" value="Postar"></div>
                     </form>
                 </div>
             </div>
