@@ -3,6 +3,9 @@ package ClassServlets;
 import banco.Consultas;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.jms.Session;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -49,7 +52,7 @@ public class inscrever extends HttpServlet {
             pw.println("            <a class=\"signUp\" href=\"./login\">Logar</a>");
             pw.println("            </div>");
             pw.println("        </div>");
-            pw.println("        <div class=\"foot\"</div>");
+            pw.println("        <div class=\"foot\"></div>");
             pw.println("    </body>");
             pw.println("</html>");
         } else {
@@ -62,10 +65,14 @@ public class inscrever extends HttpServlet {
             throws ServletException, IOException {
         Consultas c = new Consultas();
         req.setCharacterEncoding("UTF-8");
-        if (c.inserir(req.getParameter("email"), req.getParameter("senha"), req.getParameter("endereco"))) {
-            res.sendRedirect("./login");
-        } else {
-            res.sendRedirect("./cadastrado.html");
+        try {
+            if (c.inserir(req.getParameter("email"), req.getParameter("senha"), req.getParameter("endereco"))) {
+                res.sendRedirect("./login");
+            } else {
+                res.sendRedirect("./cadastrado.html");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(inscrever.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }
