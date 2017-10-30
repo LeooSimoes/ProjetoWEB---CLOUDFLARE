@@ -49,7 +49,7 @@
             </div>
             <%}%>
         </div>
-            <div class="foot"</div>
+            <div class="foot"></div>
 
             <%} else {
                 response.sendRedirect("./index.jsp");
