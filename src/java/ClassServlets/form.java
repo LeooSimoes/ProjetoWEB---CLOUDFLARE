@@ -1,5 +1,3 @@
-package ClassServlets;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -61,7 +59,6 @@ public class form extends HttpServlet implements java.io.Serializable {
                 String titulo = request.getParameter("titulo");
                 String texto = request.getParameter("texto");
                 String file = path;
-            
                 if (c.inserirPost(id, titulo, texto, file)) {
                     response.sendRedirect("./index.jsp");
                 }

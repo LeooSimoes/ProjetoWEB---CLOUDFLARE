@@ -21,7 +21,7 @@
     </head>
 
     <body>
-
+        <%request.setCharacterEncoding("UTF-8");%>
         <%if (!((request.getSession()).getAttribute("logado") == null)) {%>
 
         <div class="top">
@@ -29,24 +29,29 @@
         </div>
         <div class="tela" style="height: auto; padding-bottom: 10px;">
 
-            <%  Consultas c = new Consultas();
-                     ArrayList<postagens> post = c.busca(request.getParameter("busca"));
-                     for (int i = 0; i < post.size(); i++) {%>
-                     <div class="post" style="width: 50%;">
+        <%  Consultas c = new Consultas();
+            ArrayList<postagens> post = c.busca(request.getParameter("busca"));
+            for (int i = 0; i < post.size(); i++) {%>
+             
+                <div class="post" style="width: 50%;">
+                    
                 <%postagens p = post.get(i);%>
                 <h2><%= p.getTitulo()%></h2>
                 <p><%= p.getTexto()%></p>
-                <%String ext = p.getFile().substring(p.getFile().lastIndexOf("."));%>
-                <% if (ext.equals(".jpg") || ext.equals(".png")) {%>
-                <img src="<%=request.getContextPath()%>/<%=p.getFile()%>" width="60%" height="20%">
-                <%} else if (ext.equals(".mp4") || (ext.equals(".webm")) || (ext.equals(".ogg"))) {%> 
-                <video width="60%" height="20%" controls>
-                    <source src="<%=request.getContextPath()%>/<%=p.getFile()%>" type="video/mp4">
-                    <source src="<%=request.getContextPath()%>/<%=p.getFile()%>" type="video/webm">
-                    <source src="<%=request.getContextPath()%>/<%=p.getFile()%>" type="video/ogg">
-                </video> 
+                
+                <%if(!p.getFile().equals("")){
+                    String ext = p.getFile().substring(p.getFile().lastIndexOf("."));%>
+                    <%if (ext.equals(".jpg") || ext.equals(".png")) {%>
+                        <img src="<%=request.getContextPath()%>/<%=p.getFile()%>" width="60%" height="20%">
+                    <%}else if (ext.equals(".mp4") || (ext.equals(".webm")) || (ext.equals(".ogg"))) {%> 
+                        <video width="60%" height="20%" controls>
+                            <source src="<%=request.getContextPath()%>/<%=p.getFile()%>" type="video/mp4">
+                            <source src="<%=request.getContextPath()%>/<%=p.getFile()%>" type="video/webm">
+                            <source src="<%=request.getContextPath()%>/<%=p.getFile()%>" type="video/ogg">
+                        </video> 
+                    <%}%>
                 <%}%>
-            </div>
+                </div>
             <%}%>
         </div>
             <div class="foot"></div>

@@ -1,5 +1,6 @@
 package ClassServlets;
 
+
 import banco.Consultas;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -50,7 +51,7 @@ public class login extends HttpServlet {
             pw.println("            <a class=\"signUp\" href=\"./inscrever\">Cadastrar-se</a>");
             pw.println("            </div>");
             pw.println("        </div>");
-            pw.println("        <div class=\"foot\"></div>");
+            pw.println("        <div class=\"foot\"</div>");
             pw.println("    </body>");
             pw.println("</html>");
         } else {

@@ -85,11 +85,11 @@ public class Consultas {
 
         ConnectBD db = new ConnectBD();
         Connection conn = db.getConnection();
-
+        
         boolean sucesso = false;
 
         String sql = "insert into post (cliente_id, titulo, texto, file) values(?, ?, ?, ?)";
-
+        
         try {
             pt = conn.prepareStatement(sql);
             pt.setInt(1, idUser);

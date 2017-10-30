@@ -52,7 +52,7 @@ public class inscrever extends HttpServlet {
             pw.println("            <a class=\"signUp\" href=\"./login\">Logar</a>");
             pw.println("            </div>");
             pw.println("        </div>");
-            pw.println("        <div class=\"foot\"></div>");
+            pw.println("        <div class=\"foot\"</div>");
             pw.println("    </body>");
             pw.println("</html>");
         } else {
