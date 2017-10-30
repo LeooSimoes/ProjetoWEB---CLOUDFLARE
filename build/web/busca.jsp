@@ -1,3 +1,9 @@
+<%-- 
+    Document   : busca
+    Created on : 27/10/2017, 22:09:04
+    Author     : leona
+--%>
+
 <%@page import="java.util.ArrayList"%>
 <%@page import="ClassServlets.postagens"%>
 <%@page import="banco.Consultas"%>
