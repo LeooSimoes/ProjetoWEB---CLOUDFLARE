@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp /build/web/index.jsp
+web: java $JAVA_OPTS -cp build/web/index.jsp
