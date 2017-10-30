@@ -1,1 +1,1 @@
-web: sh target/bin/webapp
+web: java $JAVA_OPTS -cp scr/main/webapp/
