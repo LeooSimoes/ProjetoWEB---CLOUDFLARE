@@ -142,43 +142,72 @@
             </div>
 
             <div class="postagens">
-                <h1 class="sp-center" style="margin-top: 45px; text-align: center;"><a href="./postar.jsp" style="text-decoration: none">Deseja postar? Clique aqui</a></h1>
+
+                <h1 class="sp-center" style="margin-top: 45px; text-align: center;">
+                    <button class="btn-post" type="button" >Deseja postar? Clique aqui</button>
+                </h1>
+
                 <form action="./busca.jsp" method="get" enctype="multipart/form-data">
                     <input class="busca" type="text" name="busca" placeholder="Buscar Posts..." value="">
                 </form>
                 <%  Consultas c = new Consultas();
-                
+
                     String user = String.valueOf((request.getSession()).getAttribute("usuario"));
                     int id = c.idUser(user);
                     ArrayList<postagens> post = c.post(id);
-                    
+
                     for (int i = 0; i < post.size(); i++) {%>
-                        <div class="post">
-                        
-                        <%postagens p = post.get(i);%>
-                        
-                        <h2><%= p.getTitulo()%></h2>
-                        <p><%= p.getTexto()%></p>
-                        
-                        <%if(!p.getFile().equals("")){
+                <div class="post">
+
+                    <%postagens p = post.get(i);%>
+
+                    <h2><%= p.getTitulo()%></h2>
+                    <p><%= p.getTexto()%></p>
+
+                    <%if (!p.getFile().equals("")) {
                             String ext = p.getFile().substring(p.getFile().lastIndexOf("."));%>
-                            <%if (ext.equals(".jpg") || ext.equals(".png")) {%>
-                                <img src="<%=request.getContextPath()%>/<%=p.getFile()%>" width="60%" height="20%">
-                            <%}else if (ext.equals(".mp4") || (ext.equals(".webm")) || (ext.equals(".ogg"))) {%> 
-                                <video width="60%" height="20%" controls>
-                                    <source src="<%=request.getContextPath()%>/<%=p.getFile()%>" type="video/mp4">
-                                    <source src="<%=request.getContextPath()%>/<%=p.getFile()%>" type="video/webm">
-                                    <source src="<%=request.getContextPath()%>/<%=p.getFile()%>" type="video/ogg">
-                                </video> 
-                            <%}%>
-                        <%}%>
-                        </div>
+                    <%if (ext.equals(".jpg") || ext.equals(".png")) {%>
+                    <img src="<%=request.getContextPath()%>/<%=p.getFile()%>" width="60%" height="20%">
+                    <%} else if (ext.equals(".mp4") || (ext.equals(".webm")) || (ext.equals(".ogg"))) {%> 
+                    <video width="60%" height="20%" controls>
+                        <source src="<%=request.getContextPath()%>/<%=p.getFile()%>" type="video/mp4">
+                        <source src="<%=request.getContextPath()%>/<%=p.getFile()%>" type="video/webm">
+                        <source src="<%=request.getContextPath()%>/<%=p.getFile()%>" type="video/ogg">
+                    </video> 
                     <%}%>
+                    <%}%>
+                </div>
+                <%}%>
 
             </div>
         </div>
 
+        <div class="tela-post sumido">
+            <div class="container-post">
+                <form action="./form" method="post" enctype="multipart/form-data">
+                    <%
+                        Consultas c2 = new Consultas();
+                        String user2 = String.valueOf((request.getSession()).getAttribute("usuario"));
+                        int id2 = c2.idUser(user2);
+                    %>
+                    <input type="hidden" name="id" value="<%=id%>">
+                    <div><input class="titulo" type="text" name="titulo" placeholder="Título" value=""></div>
+                    <div><textarea class="dadosI" name="texto" maxlength="255" placeholder="Escreva Aqui..." value=""></textarea></div>
+                    <div><input class="files" type="file" name="arquivos"></div>
+                    <div><input class="postar" type="submit" name="postar" value="Postar"></div>
+                </form>
+            </div>
+        </div>
+
         <div class="foot"></div>
+        
+        
+        <script type="text/javascript" charset="utf-8">
+            document.getElementsByClassName("btn-post").addEventListener("click", function () {   
+                        document.getElementsByClassName("tela-post sumido").className = "tela-post";
+            });
+        </script>
+        
         <%}%>
     </body>
 </html> 
