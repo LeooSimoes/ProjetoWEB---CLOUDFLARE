@@ -56,7 +56,7 @@ public class Consultas {
         Connection conn = db.getConnection();
 
         boolean sucesso = false;
-
+        System.out.println("dksadaçsl" + endereco);
         if (user.length() > 1 && pswd.length() > 1) {
             if (!userIgual(user)) {
                 String sql = "insert into usuarios (usuario, pswd, endereco) values(?, ?, ?)";

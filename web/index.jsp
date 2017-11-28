@@ -9,38 +9,68 @@
     <head>
         <title>Cloudflare, a Empresade Desempenho e Segurança Web | Cloudflare Brasil</title>
         <meta charset="utf-8" name="viewport" content="width=400px">
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
         <link rel="stylesheet" href="./estilo.css">
-        <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="./jquery.min.js"></script>
         <script type="text/javascript" src="./javascript.js"></script>
-
     </head>
 
+    <%if ((request.getSession()).getAttribute("logado") == null) {%>
     <body>
-
-        <%if ((request.getSession()).getAttribute("logado") == null) {%>
+        <script type="text/javascript">
+            window.onload = function () {
+                popUpReg();
+                popUpLog();
+            }
+        </script>
         <nav class="menu">
             <div class="desktop">
                 <img class="logo" src="imagens/logo-cloudflare.svg">
                 <ul>
                     <li class="hover-white">
-                        <a href class="dark">Produtos<div class="iconpro"><img src="imagens/iconpro.png"></div></a>
+                        <span class="dark">Produtos<div class="iconpro"><img src="imagens/iconpro.png"></div></span>
                     </li>
 
-                    <li class="hover-white"><a href class="dark">Planos</a></li>
-                    <li class="hover-white"><a href class="dark">Blog</a></li>
-                    <li class="hover-white_x"><a href class="dark">Sales <span style="font-weight: bold;">1-888-993-5273</span></a></li>
+                    <li class="hover-white"><span class="dark">Planos</span></li>
+                    <li class="hover-white"><span class="dark">Blog</span></li>
+                    <li class="hover-white_x"><span class="dark">Sales <span class="dark" style="font-weight: bold;">1-888-993-5273</span></span></li>
 
                     <div class="right">
 
                         <div class="right-bord">
-                            <li class="li-right-bord"><a href="./inscrever">Inscreva-se</a></li>
+                            <li class="li-right-bord">Inscreva-se</li>
                         </div>
 
-                        <li class="right"><a href ="./login" class="dark">Login</a></li>
-                        <li class="right"><a href class="dark">Está sob ataque?</a></li>
-                        <li class="right"><a href class="dark">Suporte</a></li>
+                        <div class="tela-post sumido">
+                            <div class="container-post">
+                                <h2 class="crie" style="margin-bottom:20px">Crie uma conta CloudFlare</h2>
+                                <form autocomplete="off">
+                                    <div><input class="dadosI" placeholder="Email" type="text" name="email" value="" required="required" aria-invalid="true"></div>
+                                    <div><input class="dadosI s" placeholder="Senha" type="password" name="senha" value="" required="required" aria-invalid="true"></div>
+                                    <div><input class="dadosI t" placeholder="Endereço" type="text" name="endereco" value=""></div>
+                                    <div class="control"><div class="check"><input class="check" required="required" aria-invalid="true" type="checkbox"></div>
+                                        <span class="text">Aceito os termos e condições da Cloudflare e a política de privacidade.</span></div>
+                                    <input class="submit I" type="submit" value="Criar Conta">
+                                    <div class="close"><span>Fechar</span></div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <li class="right"><span class="dark login">Login</span></li>
+                        <div class="tela-post sumido">
+                            <div class="container-post">
+                                <h2 class="crie">Logue em sua conta CloudFlare</h2>
+                                <form autocomplete="off"  action="./login" method="post">
+                                    <div><input class="dados" id="email" placeholder="Email" type="text" name="email" value=""></div>
+                                    <div><input class="dados" id="senha" placeholder="Senha" type="password" name="senha" value=""></div>
+                                    <input class="submit L" id="criar" type="submit" value="Logar">
+                                    <span class="invisible">Dados invalidos</span>
+                                    <div class="close"><span>Fechar</span></div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <li class="right"><span class="dark">Está sob ataque?</span></li>
+                        <li class="right"><span class="dark">Suporte</span></li>
 
                     </div>
                 </ul>
@@ -60,7 +90,7 @@
 
         <div class="center">
             <h1 class="center">Faça com que a Internet funcione como deveria</h1>
-            <a href class="subcenter">Assista o vídeo <span style="font-size: 12px">></span></a>
+            <span class="subcenter">Assista o vídeo <span style="font-size: 12px">></span></span>
         </div>
 
         <section class="scroll">
@@ -80,36 +110,39 @@
             </div>
         </div>
         <div class="foot"></div>
+    </body>
 
-        <%} else {%>
-
+    <%} else {%>
+    <body>
+        <script type="text/javascript">
+            window.onload = function () {
+                popUpPost();
+            }
+        </script>
         <nav class="menu">
             <div class="desktop">
                 <img class="logo" src="imagens/logo-cloudflare.svg">
                 <ul>
                     <li class="hover-white">
-                        <a href class="dark">Produtos<div class="iconpro"><img src="imagens/iconpro.png"></div></a>
+                        <span class="dark">Produtos<div class="iconpro"><img src="imagens/iconpro.png"></div></span>
                     </li>
-
-                    <li class="hover-white"><a href class="dark">Planos</a></li>
-                    <li class="hover-white"><a href class="dark">Blog</a></li>
-                    <li class="hover-white_x"><a href class="dark">Sales <span style="font-weight: bold;">1-888-993-5273</span></a></li>
+                    <li class="hover-white"><span class="dark">Planos</span></li>
+                    <li class="hover-white"><span class="dark">Blog</span></li>
+                    <li class="hover-white_x"><span class="dark">Sales <span class="dark" style="font-weight: bold;">1-888-993-5273</span></span></li>
 
                     <div class="right">
-
                         <div class="right-bord">
-                            <li class="li-right-bord"><a href><%out.println((request.getSession()).getAttribute("usuario"));%></a></li>
+                            <li class="li-right-bord"><span><%out.println((request.getSession()).getAttribute("usuario"));%></span></li>
                         </div>
-
-                        <li class="right"><a href class="dark">Está sob ataque?</a></li>
-                        <li class="right"><a href class="dark">Suporte</a></li>
-
+                        <li class="right"><span class="dark">Está sob ataque?</span></li>
+                        <li class="right"><span class="dark">Suporte</span></li>
                     </div>
                 </ul>
 
                 <div class="iconmobile">
                     <img class="listrinha" src="imagens/mobile.png">
                 </div>
+
             </div>
         </nav>
 
@@ -122,7 +155,7 @@
 
         <div class="center">
             <h1 class="center">Faça com que a Internet funcione como deveria</h1>
-            <a href class="subcenter">Assista o vídeo <span style="font-size: 12px">></span></a>
+            <span class="subcenter">Assista o vídeo <span style="font-size: 12px">></span></span>
         </div>
 
         <section class="scroll">
@@ -144,10 +177,10 @@
             <div class="postagens">
 
                 <h1 class="sp-center" style="margin-top: 45px; text-align: center;">
-                    <button class="btn-post" type="button" >Deseja postar? Clique aqui</button>
+                    <button class="btn-post" type="button">Deseja postar? Clique aqui</button>
                 </h1>
 
-                <form action="./busca.jsp" method="get" enctype="multipart/form-data">
+                <form autocomplete="off"  action="./busca.jsp" method="get" enctype="multipart/form-data">
                     <input class="busca" type="text" name="busca" placeholder="Buscar Posts..." value="">
                 </form>
                 <%  Consultas c = new Consultas();
@@ -165,7 +198,7 @@
                     <p><%= p.getTexto()%></p>
 
                     <%if (!p.getFile().equals("")) {
-                            String ext = p.getFile().substring(p.getFile().lastIndexOf("."));%>
+                        String ext = p.getFile().substring(p.getFile().lastIndexOf("."));%>
                     <%if (ext.equals(".jpg") || ext.equals(".png")) {%>
                     <img src="<%=request.getContextPath()%>/<%=p.getFile()%>" width="60%" height="20%">
                     <%} else if (ext.equals(".mp4") || (ext.equals(".webm")) || (ext.equals(".ogg"))) {%> 
@@ -182,9 +215,10 @@
             </div>
         </div>
 
+        <!-----------------------------------------AREA DE POSTAGEM------------------------------------------------------------------>
         <div class="tela-post sumido">
             <div class="container-post">
-                <form action="./form" method="post" enctype="multipart/form-data">
+                <form autocomplete="off"  action="./form" method="post" enctype="multipart/form-data">
                     <%
                         Consultas c2 = new Consultas();
                         String user2 = String.valueOf((request.getSession()).getAttribute("usuario"));
@@ -195,19 +229,14 @@
                     <div><textarea class="dadosI" name="texto" maxlength="255" placeholder="Escreva Aqui..." value=""></textarea></div>
                     <div><input class="files" type="file" name="arquivos"></div>
                     <div><input class="postar" type="submit" name="postar" value="Postar"></div>
+                    <div class="close"><span>Fechar</span></div>
                 </form>
             </div>
         </div>
+        <!-----------------------------------------AREA DE POSTAGEM------------------------------------------------------------------>
 
         <div class="foot"></div>
-        
-        
-        <script type="text/javascript" charset="utf-8">
-            document.getElementsByClassName("btn-post").addEventListener("click", function () {   
-                        document.getElementsByClassName("tela-post sumido").className = "tela-post";
-            });
-        </script>
-        
+
         <%}%>
     </body>
 </html> 

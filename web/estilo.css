@@ -25,10 +25,10 @@ nav.menu{
     width: 100%;
     top: 0px;
     z-index: 3;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ;
+    -moz-transition: all 0.5s ;
+    -o-transition: all 0.5s ;
+    transition: all 0.5s ;
 }
 
 nav.menuFixo{
@@ -36,8 +36,12 @@ nav.menuFixo{
     border-bottom: 1px solid #dedede;
 }
 
-nav.menuFixo li a.dark{
+nav.menuFixo li span.dark{
     color: #424242;
+}
+
+li span.dark.login{
+    cursor: pointer;
 }
 
 nav.menu ul{
@@ -53,7 +57,7 @@ nav.menu li{
     padding: 35px 11px 25px 11px;
 }
 
-nav.menu li a{
+nav.menu li span{
     color: #fff;
     text-decoration: none;
     font-family: "Open Sans";
@@ -100,7 +104,8 @@ li.li-right-bordB{
     border-color: #408bc9;
 }
 
-nav.menu li.li-right-bord{	
+nav.menu li.li-right-bord{
+    cursor: pointer;
     border: 1px solid #fff;
     border-radius: 5px;
     margin-right: 40px;
@@ -109,7 +114,8 @@ nav.menu li.li-right-bord{
     padding: 6px 21px;
     font-weight: 600;
     line-height: 24px;
-    font-family: sans-serif;
+    font-family: "Open Sans";
+    color: #f2f2f2;
 }
 
 div.desktop{
@@ -138,7 +144,7 @@ div.menuPost{
     margin-left: 25px;
 }
 
-div.menuPost a.dark{
+div.menuPost span.dark{
     color: #424242;
     text-decoration: none;
     font-family: "Open Sans";
@@ -164,11 +170,11 @@ nav.menu li.li-right-bordB:hover {
     background-color: #3475c0;
 }
 
-nav.menu li.right a:hover {
+nav.menu li.right span:hover {
     color: #ffa500;
 }
 
-nav.menu li.rOrange a:hover {
+nav.menu li.rOrange span:hover {
     color: #ffa500;
 }
 
@@ -182,7 +188,7 @@ p.user:hover{
     background-color: rgba(41, 13, 13, 0.3);
 }
 
-div.menuPost a.dark:hover{
+div.menuPost span.dark:hover{
     color: #ffa500;
 }
 
@@ -342,7 +348,7 @@ h1.center{
     top: -15px;
 }
 
-div.center a{
+div.center span{
     text-decoration: none;
     color: #fff;
     font-size: 16px;
@@ -443,6 +449,12 @@ div.postagens{
     background: linear-gradient(to bottom left,#ffdb6f,#f69259);
 }
 
+.close{
+    position: absolute;
+    right: 15px;
+    bottom: 2px;
+    cursor: pointer;
+}
 /*----------------------------------------------------------------------CENTRO--------------------------------------------------------------------------*/
 
 /*----------------------------------------INSCREVA-SE/LOGIN-----------------------------------------*/
@@ -501,10 +513,22 @@ div.tela-post{
     max-width: 100%;
     padding-top: 25px;
     top: 0;
+    left: 0;
+    opacity: 1;
+    pointer-events: all;
+    -webkit-transition: 0.6s;
+    -moz-transition: 0.6s ;
+    -o-transition: 0.6s ;
+    transition: 0.6s ;
 }
 
 div.tela-post.sumido{
-    display: none;
+    pointer-events: none;
+    opacity: 0;
+    -webkit-transition: 0.6s ;
+    -moz-transition: 0.6s ;
+    -o-transition: 0.6s ;
+    transition: 0.6s ;
 }
 
 body div.container{
@@ -520,6 +544,7 @@ body div.container{
 }
 
 body div.container-post{
+    position: relative;
     padding: 5px;
     background-color: #fff;
     border: 1px solid #dedede;
@@ -551,7 +576,7 @@ div.crie{
     text-align: center;
 }
 
-a.signUp{
+span.signUp{
     font-family:"Open Sans";
     margin-left: 28px;
 }
@@ -609,6 +634,10 @@ input.submit{
     max-width: 100%;
 }
 
+.invisible{
+    display: none;
+    font-family: "Open Sans";
+}
 /*----------------------------------------INSCREVA-SE/LOGIN-----------------------------------------*/
 
 
@@ -629,7 +658,7 @@ input.submit{
 }
 
 @media only screen and (max-width: 999px){
-    li a{
+    li span{
         display: none;
     }
 
@@ -692,7 +721,7 @@ input.submit{
         padding-top: 20px;
     }
 
-    a.subcenter{
+    span.subcenter{
         top: 0;
     }
 
@@ -740,3 +769,13 @@ input.submit{
 
 }
 /*-------------------------------------------------------------------------MEDIAS QUERIS---------------------------------------------------------------------*/
+
+@font-face{
+    font-family: "Roboto Slab";
+    src: url(./fonts/RobotoSlab-Light.ttf);
+}
+
+@font-face{
+    font-family: "Open Sans";
+    src: url(./fonts/OpenSans-Light.ttf);
+}
