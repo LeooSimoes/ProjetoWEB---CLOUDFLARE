@@ -1,9 +1,21 @@
 function popUpReg() {
+//    $(".dadosI").keyup(function (ev) {
+//       var res = $.ajax({
+//           type: "get",
+//           url: "./buscaLogin",
+//           data: {
+//               email: $(".dadosI").val()
+//           },
+//           dataType: "text",
+//           complete: function(r){
+//               alert(r.responseText);
+//           }
+//       })
+//   });
     document.querySelector(".right-bord").addEventListener("click", function () {
         document.querySelectorAll(".tela-post.sumido")[0].className = "tela-post";
         $(".submit.I").click(function (ev) {
             $(".loading").css("display", "block");
-
             $.ajax({
                 type: "post",
                 url: "./inscrever",
@@ -81,13 +93,14 @@ function getEndereco() {
         $.getJSON("http://cep.republicavirtual.com.br/web_cep.php?cep=" + $(".dadosI.t").val() + "&formato=json", function (data) {
             console.log(data);
             if (data["resultado"]) {
-                $(".dadosI.fo").val(unescape(data["cidade"]));
-                $(".dadosI.fi").val(unescape(data["uf"]));
-                $(".dadosI.si").val(unescape(data["bairro"]));
-                if (data["tipo_lougradouro"]) {
-                    $(".dadosI.se").val(unescape(data["tipo_logradouro"]) + " " + unescape(data["logradouro"]));
+                $(".dadosI.fo").val(decodeURIComponent(data["cidade"]));
+                $(".dadosI.fi").val(decodeURIComponent(data["uf"]));
+                $(".dadosI.si").val(decodeURIComponent(data["bairro"]));
+                if (data["tipo_logradouro"] !== "") {
+                    $(".dadosI.se").val(decodeURIComponent(data["tipo_logradouro"]) + " " + decodeURIComponent(data["logradouro"]));
                 }
             }
         });
     }
 }
+
