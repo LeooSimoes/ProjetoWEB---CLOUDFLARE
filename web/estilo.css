@@ -638,6 +638,16 @@ input.submit{
     display: none;
     font-family: "Open Sans";
 }
+
+.loading{
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 636px;
+    border-radius: 20px;
+    height: 475px;
+}
 /*----------------------------------------INSCREVA-SE/LOGIN-----------------------------------------*/
 
 

@@ -22,7 +22,7 @@ public class inscrever extends HttpServlet {
         Consultas c = new Consultas();
         req.setCharacterEncoding("UTF-8");
         try {
-            if (c.inserir(req.getParameter("email"), req.getParameter("senha"), req.getParameter("endereco"))) {
+            if (c.inserir(req.getParameter("email"), req.getParameter("senha"), req.getParameter("rua"), req.getParameter("cep"), req.getParameter("bairro"), req.getParameter("cidade"), req.getParameter("uf"))) {
                 res.sendRedirect("./index.jsp");
             } else {
                 res.sendRedirect("./cadastrado.html");

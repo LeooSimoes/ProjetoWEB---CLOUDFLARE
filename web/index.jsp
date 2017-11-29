@@ -41,15 +41,20 @@
                         </div>
 
                         <div class="tela-post sumido">
-                            <div class="container-post">
+                            <div class="container-post" style="margin-top: 50px; height: 525px">
                                 <h2 class="crie" style="margin-bottom:20px">Crie uma conta CloudFlare</h2>
                                 <form autocomplete="off">
                                     <div><input class="dadosI" placeholder="Email" type="text" name="email" value="" required="required" aria-invalid="true"></div>
                                     <div><input class="dadosI s" placeholder="Senha" type="password" name="senha" value="" required="required" aria-invalid="true"></div>
-                                    <div><input class="dadosI t" placeholder="Endereço" type="text" name="endereco" value=""></div>
+                                    <div><input class="dadosI t" placeholder="CEP" type="text" name="cep" value="" onblur="getEndereco()"></div>
+                                    <div><input class="dadosI fo" placeholder="Cidade" type="text" name="cidade" value=""></div>
+                                    <div><input class="dadosI fi" placeholder="Estado" type="text" name="estado" value=""></div>
+                                    <div><input class="dadosI si" placeholder="Bairro" type="text" name="bairro" value=""></div>
+                                    <div><input class="dadosI se" placeholder="Rua" type="text" name="rua" value=""></div>
                                     <div class="control"><div class="check"><input class="check" required="required" aria-invalid="true" type="checkbox"></div>
                                         <span class="text">Aceito os termos e condições da Cloudflare e a política de privacidade.</span></div>
                                     <input class="submit I" type="submit" value="Criar Conta">
+                                    <img class="loading" src="imagens/loading.gif">
                                     <div class="close"><span>Fechar</span></div>
                                 </form>
                             </div>

@@ -2,18 +2,29 @@ function popUpReg() {
     document.querySelector(".right-bord").addEventListener("click", function () {
         document.querySelectorAll(".tela-post.sumido")[0].className = "tela-post";
         $(".submit.I").click(function (ev) {
+            $(".loading").css("display", "block");
+
             $.ajax({
                 type: "post",
                 url: "./inscrever",
                 data: {
                     email: $(".dadosI").val(),
                     senha: $(".dadosI.s").val(),
-                    endereco: $(".dadosI.t").val()
+                    cep: $(".dadosI.t").val(),
+                    cidade: $(".dadosI.fo").val(),
+                    uf: $(".dadosI.fi").val(),
+                    bairro: $(".dadosI.si").val(),
+                    rua: $(".dadosI.se").val()
                 }
             });
-
-            document.querySelectorAll(".tela-post")[0].className = "tela-post sumido";
+            $(document).ajaxComplete(function () {
+                setTimeout(function () {
+                    $(".loading").css("display", "none");
+                    document.querySelectorAll(".tela-post")[0].className = "tela-post sumido";
+                }, 2000);
+            });
             return false;
+
         });
         document.querySelectorAll(".close")[0].addEventListener("click", function () {
             document.querySelectorAll(".tela-post")[0].className = "tela-post sumido";
@@ -64,3 +75,19 @@ $(function () {
         }
     });
 });
+
+function getEndereco() {
+    if ($.trim($(".dadosI.t").val()) != "") {
+        $.getJSON("http://cep.republicavirtual.com.br/web_cep.php?cep=" + $(".dadosI.t").val() + "&formato=json", function (data) {
+            console.log(data);
+            if (data["resultado"]) {
+                $(".dadosI.fo").val(unescape(data["cidade"]));
+                $(".dadosI.fi").val(unescape(data["uf"]));
+                $(".dadosI.si").val(unescape(data["bairro"]));
+                if (data["tipo_lougradouro"]) {
+                    $(".dadosI.se").val(unescape(data["tipo_logradouro"]) + " " + unescape(data["logradouro"]));
+                }
+            }
+        });
+    }
+}

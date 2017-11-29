@@ -50,22 +50,26 @@ public class Consultas {
         return sucesso;
     }
 
-    public boolean inserir(String user, String pswd, String endereco) throws SQLException {
+    public boolean inserir(String user, String pswd, String rua, String cep, String bairro, String cidade, String uf) throws SQLException {
 
         ConnectBD db = new ConnectBD();
         Connection conn = db.getConnection();
 
         boolean sucesso = false;
-        System.out.println("dksadaçsl" + endereco);
+        
         if (user.length() > 1 && pswd.length() > 1) {
             if (!userIgual(user)) {
-                String sql = "insert into usuarios (usuario, pswd, endereco) values(?, ?, ?)";
+                String sql = "insert into usuarios (usuario, pswd, rua, cep, bairro, cidade, uf) values(?, ?, ?, ?, ?, ?, ?)";
 
                 try {
                     pt = conn.prepareStatement(sql);
                     pt.setString(1, user);
                     pt.setString(2, pswd);
-                    pt.setString(3, endereco);
+                    pt.setString(3, rua);
+                    pt.setString(4, cep);
+                    pt.setString(5, bairro);
+                    pt.setString(6, cidade);
+                    pt.setString(7, uf);
                     pt.executeUpdate();
                     sucesso = true;
                     pt.close();
