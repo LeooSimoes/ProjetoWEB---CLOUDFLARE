@@ -1,23 +1,34 @@
 function popUpReg() {
-    $(".dadosI.f").keyup(function (ev) {
+    $(".dadosI.f").keyup(_.throttle(function () {
+        $(".miniloading").css("display", "block");
         $.ajax({
             type: "get",
             url: "./buscaLogin?email=" + $(".dadosI.f").val(),
             dataType: "json",
             success: function (data) {
-                if($(".dadosI.f").val() == ""){
+                if ($(".dadosI.f").val() == "") {
                     $(".verif.e").css("display", "none");
                     $(".verif.c").css("display", "none");
-                }else if(data["resultado"] == true){
+                } else if (($(".dadosI.f").val()).length == 1) {
                     $(".verif.e").css("display", "block");
                     $(".verif.c").css("display", "none");
-                }else{
+                } else if (data["resultado"] == true) {
+                    $(".verif.e").css("display", "block");
+                    $(".verif.c").css("display", "none");
+                } else {
                     $(".verif.c").css("display", "block");
                     $(".verif.e").css("display", "none");
                 }
             }
         });
-    });
+        $(document).ajaxComplete(function () {
+            $(".miniloading").css("display", "none");
+        });
+
+    }, 1500));
+
+
+
     document.querySelector(".right-bord").addEventListener("click", function () {
         document.querySelectorAll(".tela-post.sumido")[0].className = "tela-post";
         $(".submit.I").click(function (ev) {

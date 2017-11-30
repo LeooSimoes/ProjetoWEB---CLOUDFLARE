@@ -655,11 +655,16 @@ input.submit{
     width: 30px;
     right: 85px;
     top: 80px;
-    -webkit-transition: all 0.5s ;
-    -moz-transition: all 0.5s ;
-    -o-transition: all 0.5s ;
-    transition: all 0.5s ;
 }
+
+.miniloading{
+    position: absolute;
+    display: none;
+    width: 110px;
+    right: 0px;
+    top: 50px;
+}
+
 /*----------------------------------------INSCREVA-SE/LOGIN-----------------------------------------*/
 
 

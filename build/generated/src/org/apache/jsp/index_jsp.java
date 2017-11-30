@@ -57,6 +57,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <title>Cloudflare, a Empresade Desempenho e Segurança Web | Cloudflare Brasil</title>\n");
       out.write("        <meta charset=\"utf-8\" name=\"viewport\" content=\"width=400px\">\n");
       out.write("        <link rel=\"stylesheet\" href=\"./estilo.css\">\n");
+      out.write("        <script type=\"text/javascript\" src=\"./underscore.js\"></script>\n");
       out.write("        <script type=\"text/javascript\" src=\"./jquery.min.js\"></script>\n");
       out.write("        <script type=\"text/javascript\" src=\"./javascript.js\"></script>\n");
       out.write("    </head>\n");
@@ -93,7 +94,9 @@ if ((request.getSession()).getAttribute("logado") == null) {
       out.write("                            <div class=\"container-post\" style=\"margin-top: 50px; height: 525px\">\n");
       out.write("                                <h2 class=\"crie\" style=\"margin-bottom:20px\">Crie uma conta CloudFlare</h2>\n");
       out.write("                                <form autocomplete=\"off\">\n");
-      out.write("                                    <div><input class=\"dadosI\" placeholder=\"Email\" type=\"text\" name=\"email\" value=\"\" required=\"required\" aria-invalid=\"true\"></div>\n");
+      out.write("                                    <div><input class=\"dadosI f\" placeholder=\"Email\" type=\"text\" name=\"email\" value=\"\" required=\"required\" aria-invalid=\"true\"></div>\n");
+      out.write("                                    <img class=\"verif c\" src=\"imagens/certo.png\">\n");
+      out.write("                                    <img class=\"verif e\" src=\"imagens/errado.png\">\n");
       out.write("                                    <div><input class=\"dadosI s\" placeholder=\"Senha\" type=\"password\" name=\"senha\" value=\"\" required=\"required\" aria-invalid=\"true\"></div>\n");
       out.write("                                    <div><input class=\"dadosI t\" placeholder=\"CEP\" type=\"text\" name=\"cep\" value=\"\" onblur=\"getEndereco()\"></div>\n");
       out.write("                                    <div><input class=\"dadosI fo\" placeholder=\"Cidade\" type=\"text\" name=\"cidade\" value=\"\"></div>\n");
