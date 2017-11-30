@@ -44,7 +44,9 @@
                             <div class="container-post" style="margin-top: 50px; height: 525px">
                                 <h2 class="crie" style="margin-bottom:20px">Crie uma conta CloudFlare</h2>
                                 <form autocomplete="off">
-                                    <div><input class="dadosI" placeholder="Email" type="text" name="email" value="" required="required" aria-invalid="true"></div>
+                                    <div><input class="dadosI f" placeholder="Email" type="text" name="email" value="" required="required" aria-invalid="true"></div>
+                                    <img class="verif c" src="imagens/certo.png">
+                                    <img class="verif e" src="imagens/errado.png">
                                     <div><input class="dadosI s" placeholder="Senha" type="password" name="senha" value="" required="required" aria-invalid="true"></div>
                                     <div><input class="dadosI t" placeholder="CEP" type="text" name="cep" value="" onblur="getEndereco()"></div>
                                     <div><input class="dadosI fo" placeholder="Cidade" type="text" name="cidade" value=""></div>

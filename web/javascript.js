@@ -1,17 +1,23 @@
 function popUpReg() {
-//    $(".dadosI").keyup(function (ev) {
-//       var res = $.ajax({
-//           type: "get",
-//           url: "./buscaLogin",
-//           data: {
-//               email: $(".dadosI").val()
-//           },
-//           dataType: "text",
-//           complete: function(r){
-//               alert(r.responseText);
-//           }
-//       })
-//   });
+    $(".dadosI.f").keyup(function (ev) {
+        $.ajax({
+            type: "get",
+            url: "./buscaLogin?email=" + $(".dadosI.f").val(),
+            dataType: "json",
+            success: function (data) {
+                if($(".dadosI.f").val() == ""){
+                    $(".verif.e").css("display", "none");
+                    $(".verif.c").css("display", "none");
+                }else if(data["resultado"] == true){
+                    $(".verif.e").css("display", "block");
+                    $(".verif.c").css("display", "none");
+                }else{
+                    $(".verif.c").css("display", "block");
+                    $(".verif.e").css("display", "none");
+                }
+            }
+        });
+    });
     document.querySelector(".right-bord").addEventListener("click", function () {
         document.querySelectorAll(".tela-post.sumido")[0].className = "tela-post";
         $(".submit.I").click(function (ev) {
@@ -20,7 +26,7 @@ function popUpReg() {
                 type: "post",
                 url: "./inscrever",
                 data: {
-                    email: $(".dadosI").val(),
+                    email: $(".dadosI.f").val(),
                     senha: $(".dadosI.s").val(),
                     cep: $(".dadosI.t").val(),
                     cidade: $(".dadosI.fo").val(),

@@ -648,6 +648,18 @@ input.submit{
     border-radius: 20px;
     height: 475px;
 }
+
+.verif{
+    position: absolute;
+    display: none;
+    width: 30px;
+    right: 85px;
+    top: 80px;
+    -webkit-transition: all 0.5s ;
+    -moz-transition: all 0.5s ;
+    -o-transition: all 0.5s ;
+    transition: all 0.5s ;
+}
 /*----------------------------------------INSCREVA-SE/LOGIN-----------------------------------------*/
 
 

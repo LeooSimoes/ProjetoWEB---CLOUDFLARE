@@ -27,6 +27,9 @@ public class Consultas {
 
     public boolean userIgual(String user) throws SQLException {
 
+        ConnectBD db = new ConnectBD();
+        Connection conn = db.getConnection();
+        
         boolean sucesso = false;
 
         String sql = "select * from usuarios";

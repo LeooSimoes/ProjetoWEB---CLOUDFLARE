@@ -16,6 +16,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.json.JSONObject;
 
 /**
  *
@@ -30,8 +31,9 @@ public class buscaLogin extends HttpServlet {
         Consultas c = new Consultas();
 
         try {
-            res.getWriter().write("" + c.userIgual(req.getParameter("email")));
-            req.getRequestDispatcher("./index.jsp").forward(req, res);
+            JSONObject json = new JSONObject();
+            json.put("resultado", c.userIgual(req.getParameter("email")));
+            res.getWriter().write(json.toString());
         } catch (SQLException ex) {
             Logger.getLogger(buscaLogin.class.getName()).log(Level.SEVERE, null, ex);
         }
