@@ -95,6 +95,7 @@ if ((request.getSession()).getAttribute("logado") == null) {
       out.write("                                <h2 class=\"crie\" style=\"margin-bottom:20px\">Crie uma conta CloudFlare</h2>\n");
       out.write("                                <form autocomplete=\"off\">\n");
       out.write("                                    <div><input class=\"dadosI f\" placeholder=\"Email\" type=\"text\" name=\"email\" value=\"\" required=\"required\" aria-invalid=\"true\"></div>\n");
+      out.write("                                    <img class=\"miniloading\" src=\"imagens/mini-loading.gif\">\n");
       out.write("                                    <img class=\"verif c\" src=\"imagens/certo.png\">\n");
       out.write("                                    <img class=\"verif e\" src=\"imagens/errado.png\">\n");
       out.write("                                    <div><input class=\"dadosI s\" placeholder=\"Senha\" type=\"password\" name=\"senha\" value=\"\" required=\"required\" aria-invalid=\"true\"></div>\n");

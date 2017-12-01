@@ -24,13 +24,10 @@ function popUpReg() {
         $(document).ajaxComplete(function () {
             $(".miniloading").css("display", "none");
         });
-
     }, 1500));
 
-
-
     document.querySelector(".right-bord").addEventListener("click", function () {
-        document.querySelectorAll(".tela-post.sumido")[0].className = "tela-post";
+        document.querySelectorAll(".tela-post.sumido")[0].className = "tela-post";   
         $(".submit.I").click(function (ev) {
             $(".loading").css("display", "block");
             $.ajax({
@@ -50,10 +47,14 @@ function popUpReg() {
                 setTimeout(function () {
                     $(".loading").css("display", "none");
                     document.querySelectorAll(".tela-post")[0].className = "tela-post sumido";
+                    $(".insc").each(function(){
+                        this.reset();
+                    });
+                    $(".verif.c").css("display", "none");
+                    $(".verif.e").css("display", "none");
                 }, 2000);
             });
             return false;
-
         });
         document.querySelectorAll(".close")[0].addEventListener("click", function () {
             document.querySelectorAll(".tela-post")[0].className = "tela-post sumido";
@@ -120,4 +121,3 @@ function getEndereco() {
         });
     }
 }
-

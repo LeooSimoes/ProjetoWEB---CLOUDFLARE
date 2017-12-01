@@ -44,7 +44,7 @@
                         <div class="tela-post sumido">
                             <div class="container-post" style="margin-top: 50px; height: 525px">
                                 <h2 class="crie" style="margin-bottom:20px">Crie uma conta CloudFlare</h2>
-                                <form autocomplete="off">
+                                <form autocomplete="off" class="insc">
                                     <div><input class="dadosI f" placeholder="Email" type="text" name="email" value="" required="required" aria-invalid="true"></div>
                                     <img class="miniloading" src="imagens/mini-loading.gif">
                                     <img class="verif c" src="imagens/certo.png">

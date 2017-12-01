@@ -29,7 +29,8 @@ public class buscaLogin extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse res)
             throws ServletException, IOException {
         Consultas c = new Consultas();
-
+        
+        res.setContentType("aplication/json");
         try {
             JSONObject json = new JSONObject();
             json.put("resultado", c.userIgual(req.getParameter("email")));

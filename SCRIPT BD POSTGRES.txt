@@ -1,0 +1,22 @@
+CREATE DATABASE cloudflare;
+
+CREATE TABLE usuarios(
+    id SERIAL PRIMARY KEY,
+    usuario VARCHAR(80),
+    pswd VARCHAR(80),
+    rua text,
+    cep VARCHAR(10),
+    bairro VARCHAR(45),
+    cidade VARCHAR(45),
+    uf VARCHAR(2)
+);
+
+CREATE TABLE post(
+    id SERIAL PRIMARY KEY,
+    cliente_id INT,
+    titulo TEXT,
+    texto TEXT,
+    file TEXT,
+    CONSTRAINT fk_clienteid FOREIGN KEY (cliente_id)
+        REFERENCES usuarios (id) MATCH SIMPLE
+);
